@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Sony Playstation 5 825gb God Of War Ragnarok Bundle Color Blanco/Negro",
+    "description": "Sony PlayStation 5 825GB God of War Ragnarok Bundle color blanco y negro  Características principales:  Juega títulos de PS5 y PS4 en discos Blu-ray. También puedes descargar juegos digitales de PS5 y PS4 desde PlayStation® Store. Experimenta una velocidad sorprendente con una SSD de velocidad ultrarrápida, una inmersión más profunda con soporte para respuesta háptica, gatillos adaptables y audio 3D*, además de una generación completamente nueva de juegos de PlayStation. Muévete por los mundos del juego con un realismo increíble. Una velocidad de fotogramas alta y fluida de hasta 120 fps para los juegos compatibles, con soporte para salida de 120 Hz en pantallas 4K, disfruta de gráficos 4K nítidos. Los detalles intrincados cobran vida con tu televisor 4K y juegos de PS5 compatibles.",
+    "price": 1.099999,
+    "thumbnail": "https://w7.pngwing.com/pngs/700/376/png-transparent-computer-icons-no-symbol-no-entry-sign-angle-triangle-sign.png",
+    "code": "ee571de5-f4d3-48ce-bb81-cbf1149d266b",
+    "stock": 1,
+    "status": true,
+    "category": "console"
+  },
+  {
+    "id": 2,
+    "title": "Consola Xbox Series X 1tb Ssd 120 Hz 4k Con Lector De Disco Color Negro",
+    "description": "12 TERAFLOPS DE POTENCIA Los 12 teraflops de potencia de procesamiento alojados en el sistema en un chip (SOC) funcionan con las arquitecturas Zen 2 y RDNA 2 de AMD para dar como resultado mundos que exigen una mirada más cercana.  MEJOR ASPECTO. MEJOR JUEGO. Equipado con las arquitecturas Zen 2 y RDNA 2 de AMD, DirectX Raytracing ofrece iluminación realista, sombras y reflejos precisos para crear mundos dinámicos y vivos.",
+    "price": 874.491,
+    "thumbnail": "https://w7.pngwing.com/pngs/700/376/png-transparent-computer-icons-no-symbol-no-entry-sign-angle-triangle-sign.png",
+    "code": "d847e2c4-2710-4753-9cfe-0a4ca6bdb43c",
+    "stock": 1,
+    "status": true,
+    "category": "console"
+  }
+]

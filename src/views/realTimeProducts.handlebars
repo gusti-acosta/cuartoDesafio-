@@ -1,0 +1,72 @@
+
+<h1>List of Products</h1>
+<ul id="ulId">
+    {{#each products}}
+      <li>
+          <h2>{{this.title}}</h2>
+          <p><b>Description:</b>{{this.description}}</p>
+          <p><b>Price: </b>{{this.price}}$ </p>
+          <p><b>ID: </b>{{this.id}}</p>
+          <p><b>Category: </b>{{this.category}}</p>
+          <button type="button" onclick="deleteProduct({{this.id}})">Delete</button>
+      </li>
+    {{/each}}
+</ul>
+<h2>Real Time Products</h2> 
+<form id="productForm">
+  <input type="text" id="productTitle" placeholder="Title" style="margin-bottom: 10px;">
+  <br>
+  <input type="text" id="productDescription" placeholder="Description" style="margin-bottom: 10px;">
+  <br>
+  <input type="number" id="productPrice" placeholder="price" style="margin-bottom: 10px;">
+  <br>
+  <input type="text" id="productCategory" placeholder="caregory" style="margin-bottom: 10px;">
+  <br>
+  <button type="submit" id="addProduct" style="margin-bottom: 10px;">Add Product</button>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  // Envía un evento al servidor cuando se envía el formulario
+  const productTitle = document.getElementById('productTitle')
+  const productDescription = document.getElementById('productDescription')
+  const addProduct = document.getElementById('addProduct')
+  const ulId = document.getElementById('ulId')
+  const productPrice = document.getElementById('productPrice')
+  const productCategory = document.getElementById('productCategory')
+
+  addProduct.addEventListener('click', ()=>{
+    console.log('Sending new product:', productTitle.value, productDescription.value, productPrice.value, productCategory.value); // Verifica si los datos del nuevo producto se envían correctamente
+    socket.emit('new product', {
+      title: productTitle.value, 
+      description: productDescription.value,
+      price: parseFloat(productPrice.value),
+      category: productCategory.value
+    })
+    productTitle.value = ''; 
+    productDescription.value = '';
+    productPrice.value = '';
+    productCategory.value = '';
+
+  })
+
+
+  socket.on('list updated', ({products}) => {
+    ulId.innerHTML = "";
+    products.forEach(product => {
+      ulId.innerHTML +=
+      `<li>
+          <h2>${product.title}</h2>
+          <p>${product.description}</p>
+          <p>price:${product.price}$ </p>
+          <p>ID: ${product.id}<p/>     
+      </li>`;
+    });
+  });
+
+  function deleteProduct(id)  {
+    socket.emit('delete product', {id})
+  }
+</script>
